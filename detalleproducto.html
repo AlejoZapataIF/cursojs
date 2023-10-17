@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+a a decir <!DOCTYPE html>
 <html>
 
 <head>
@@ -14,20 +14,20 @@
   <div class="detalles-producto">
     <!-- Aquí mostrarás los detalles del producto utilizando JavaScript -->
   </div>
+  
   <button id="agregarAlCarrito">Agregar al Carrito</button>
+  
   <script>
-    // Obtén el ID del producto de la URL
+    // Obtén el ID del producto de la URL (podemos usar la url porque no estamos haciendo http en internet sino en el equipo)
     const urlParams = new URL(window.location.href);
     const productId = urlParams.searchParams.get('id');
     // Función para obtener los detalles del product
     // Intenta recuperar el producto desde localStorage
     const productJSON = localStorage.getItem(`product_${productId}`);
 
+    // Creamos el evento de escucha del click del botón agregar al carrito
      document.addEventListener("DOMContentLoaded", () => {
-      // Obtén el producto del local storage si existe
-      const productJSON = localStorage.getItem(`product_${productId}`);
       const product = JSON.parse(productJSON);
-
       // Agrega un evento al botón "Agregar al Carrito"
       const agregarAlCarritoButton = document.getElementById("agregarAlCarrito");
       agregarAlCarritoButton.addEventListener("click", () => {
@@ -35,7 +35,7 @@
         agregarAlCarrito(product);
       });
     });
-
+    // creamos la función de agregar al carrito de compra
     function agregarAlCarrito(product) {
       // Obtén el carrito actual desde localStorage o crea un array vacío
       let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -50,7 +50,7 @@
       alert("Producto agregado al carrito");
     }
 
-
+    // mostramos el detalle del producto:
     if (productJSON) {
       // Si el producto está en localStorage, convierte el JSON a un objeto JavaScript
       const product = JSON.parse(productJSON);
