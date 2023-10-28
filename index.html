@@ -53,10 +53,10 @@
 
     document.addEventListener("DOMContentLoaded", async () => {
       const contenedor = document.querySelector(".contenedor");
-      const products = await obtenerProductos();
+      const prods = await obtenerProductos();
 
       let productos = "";
-      products.forEach((product) => {
+      prods.forEach((product) => {
 		localStorage.setItem(`product_${product.id}`, JSON.stringify(product));
         productos += `
           <div class="card" style="width: 18rem;">
