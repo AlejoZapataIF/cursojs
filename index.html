@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
+  <title>Tienda Virtual</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <style>
     /*En este ejemplo, hemos utilizado CSS flexbox para que los cards se muestren horizontalmente en la clase .contenedor. 
@@ -50,14 +50,14 @@
         return [];
       }
     }
-
+    
     document.addEventListener("DOMContentLoaded", async () => {
       const contenedor = document.querySelector(".contenedor");
       const prods = await obtenerProductos();
 
       let productos = "";
       prods.test.forEach((product) => {
-		localStorage.setItem(`product_${product.id}`, JSON.stringify(product));
+	localStorage.setItem(`product_${product.id}`, JSON.stringify(product));
         productos += `
           <div class="card" style="width: 18rem;">
             <img src="${product.image}" style="width: 100px" class="card-img-top" alt="...">
